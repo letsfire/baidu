@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ai-sdk/baidu/pkg/ocr"
+	"github.com/letsfire/baidu/pkg/ocr"
 )
 
 func TestSDK_Ocr(t *testing.T) {

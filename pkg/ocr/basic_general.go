@@ -3,7 +3,7 @@ package ocr
 import (
 	"encoding/json"
 
-	"github.com/ai-sdk/baidu/pkg"
+	"github.com/letsfire/baidu/pkg"
 )
 
 // BasicGeneralRequest

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ai-sdk/baidu/pkg/rni"
+	"github.com/letsfire/baidu/pkg/rni"
 )
 
 func TestSDK_Rni_H5SASSToken(t *testing.T) {

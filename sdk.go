@@ -7,9 +7,9 @@ import (
 
 	"github.com/go-resty/resty/v2"
 
-	"github.com/ai-sdk/baidu/pkg/face"
-	"github.com/ai-sdk/baidu/pkg/ocr"
-	"github.com/ai-sdk/baidu/pkg/rni"
+	"github.com/letsfire/baidu/pkg/face"
+	"github.com/letsfire/baidu/pkg/ocr"
+	"github.com/letsfire/baidu/pkg/rni"
 )
 
 var client = resty.New()

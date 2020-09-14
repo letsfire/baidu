@@ -1,7 +1,7 @@
 package face
 
 import (
-	"github.com/ai-sdk/baidu/pkg"
+	"github.com/letsfire/baidu/pkg"
 )
 
 // BaseResponse

@@ -8,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ai-sdk/baidu/pkg/face"
+	"github.com/letsfire/baidu/pkg/face"
 )
 
 func TestSDK_Face(t *testing.T) {
