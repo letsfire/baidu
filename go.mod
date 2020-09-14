@@ -1,4 +1,4 @@
-module github.com/ai-sdk/baidu
+module github.com/letsfire/baidu
 
 go 1.12
 
