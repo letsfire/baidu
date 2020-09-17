@@ -51,6 +51,11 @@ func (sdk SDK) H5SASSResult(token string) (*H5SASSResultResponse, error) {
 	return res, err
 }
 
+func (sdk SDK) H5SASSRedirect(planId, doneUrl, failUrl string) (string, error) {
+	token, err := sdk.H5SASSToken(planId)
+	return H5SASSRedirect(token, doneUrl, failUrl), err
+}
+
 func NewSDK(token string, err error) SDK {
 	return SDK{token: token, error: err}
 }
