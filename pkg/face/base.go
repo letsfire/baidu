@@ -26,3 +26,8 @@ func (br *BaseResponse) NoMatch() bool {
 func (br *BaseResponse) UrlError() bool {
 	return br.ErrorCode == 222204
 }
+
+// MissToken FaceToken不存在
+func (br *BaseResponse) MissToken() bool {
+	return br.ErrorCode == 222209
+}
