@@ -15,7 +15,7 @@ var rds = alone.NewClient(
 	),
 )
 
-var sdk = New("***", "***", RedisStorage(rds))
+var sdk = New("****", "****", RedisStorage(rds))
 
 func TestToken(t *testing.T) {
 	tk1, err1 := sdk.token()

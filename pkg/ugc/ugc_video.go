@@ -32,7 +32,9 @@ func (req *VideoRequest) ToMap() map[string]string {
 type VideoResponse struct {
 	BaseResponse
 	Conclusion
-	Frames []struct {
+	Msg      string `json:"msg"`
+	IsHitMd5 bool   `json:"isHitMd5"`
+	Frames   []struct {
 		Conclusion
 		FrameTimeStamp    int64         `json:"frameTimeStamp"`
 		FrameUrl          string        `json:"frameUrl"`

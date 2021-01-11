@@ -1,6 +1,8 @@
 package ugc
 
 import (
+	"fmt"
+
 	"github.com/letsfire/baidu/pkg"
 )
 
@@ -21,17 +23,18 @@ func (c Conclusion) IsFailed() bool {
 }
 
 type DataResponse struct {
-	ErrorCode   int     `json:"error_code"`
-	ErrorMsg    string  `json:"error_msg"`
+	ErrorCode int    `json:"error_code"`
+	ErrorMsg  string `json:"error_msg"`
+	Conclusion
+	Msg         string  `json:"msg"`
 	Type        int     `json:"type"`
 	SubType     int     `json:"subType"`
-	Msg         string  `json:"msg"`
 	Probability float64 `json:"probability"`
-	DatasetName float64 `json:"datasetName"`
+	DatasetName string  `json:"datasetName"`
 	Stars       []struct {
 		Name        string  `json:"name"`
 		Probability float64 `json:"probability"`
-		DatasetName float64 `json:"datasetName"`
+		DatasetName string  `json:"datasetName"`
 	} `json:"stars"`
 	Hits []struct {
 		Probability float64  `json:"probability"`
@@ -40,4 +43,20 @@ type DataResponse struct {
 	} `json:"hits"`
 }
 
+func (dr *DataResponse) Error() error {
+	if dr.ErrorCode == 0 {
+		return nil
+	}
+	return fmt.Errorf("[%d] - %s", dr.ErrorCode, dr.ErrorMsg)
+}
+
 type DataResponses []DataResponse
+
+func (drs DataResponses) Error() error {
+	for _, dr := range drs {
+		if dr.Error() != nil {
+			return dr.Error()
+		}
+	}
+	return nil
+}
