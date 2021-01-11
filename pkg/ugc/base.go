@@ -43,6 +43,17 @@ type DataResponse struct {
 	} `json:"hits"`
 }
 
+func (dr *DataResponse) Words() []string {
+	words := make([]string, 0)
+	for _, hit := range dr.Hits {
+		if len(hit.Words) == 0 {
+			continue
+		}
+		words = append(words, hit.Words...)
+	}
+	return words
+}
+
 func (dr *DataResponse) Error() error {
 	if dr.ErrorCode == 0 {
 		return nil
