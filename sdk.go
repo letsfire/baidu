@@ -3,6 +3,7 @@ package baidu
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/letsfire/baidu/pkg/ugc"
 	"time"
 
 	"github.com/go-resty/resty/v2"
@@ -22,6 +23,10 @@ type SDK struct {
 	localCache   localCache    // Token本地缓存
 	tokenStorage TokenStorage  // Token共享缓存
 	safeDuration time.Duration // Token容错时长, 也是本地缓存有效时长
+}
+
+func (sdk *SDK) Ugc() ugc.SDK {
+	return ugc.NewSDK(sdk.token())
 }
 
 func (sdk *SDK) Rni() rni.SDK {

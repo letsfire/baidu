@@ -40,8 +40,8 @@ func TestSDK_Face(t *testing.T) {
 	assert.EqualValues(t, 1, len(res3.Result.UserList))
 
 	_, err4 := sdk.Face().UserDel(&face.UserDelRequest{
-		UserId:    "TEST",
-		GroupId:   "TEST",
+		UserId:  "TEST",
+		GroupId: "TEST",
 	})
 	assert.Nil(t, err4)
 }
