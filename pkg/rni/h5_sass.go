@@ -33,6 +33,10 @@ type H5SASSResultResponse struct {
 			IssueAuthority string `json:"issue_authority"`
 			IssueTime      string `json:"issue_time"`
 		} `json:"idcard_ocr_result"`
+		IdcardImages struct {
+			FrontBase64 string `json:"front_base64"`
+			BackBase64  string `json:"back_base64"`
+		} `json:"idcard_images"`
 		VerifyResult struct {
 			LivenessScore float64 `json:"liveness_score"`
 			Score         float64 `json:"score"`

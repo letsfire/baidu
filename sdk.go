@@ -3,8 +3,10 @@ package baidu
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/letsfire/baidu/pkg/ugc"
 	"time"
+
+	"github.com/letsfire/baidu/pkg/body"
+	"github.com/letsfire/baidu/pkg/ugc"
 
 	"github.com/go-resty/resty/v2"
 
@@ -39,6 +41,10 @@ func (sdk *SDK) Ocr() ocr.SDK {
 
 func (sdk *SDK) Face() face.SDK {
 	return face.NewSDK(sdk.token())
+}
+
+func (sdk *SDK) Body() body.SDK {
+	return body.NewSDK(sdk.token())
 }
 
 func (sdk *SDK) token() (v string, err error) {

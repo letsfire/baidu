@@ -1,8 +1,12 @@
 package pkg
 
 import (
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"strings"
 )
 
 type BaseResponse struct {
@@ -35,4 +39,19 @@ func (bs BoolString) MarshalJSON() ([]byte, error) {
 		return json.Marshal("true")
 	}
 	return json.Marshal("false")
+}
+
+func ImageBase64(image string) string {
+	isUrl := strings.HasPrefix(image, "http://") ||
+		strings.HasPrefix(image, "https://")
+	if isUrl == false {
+		return image
+	}
+	if res, err := http.Get(image); err != nil {
+		panic(err)
+	} else {
+		defer res.Body.Close()
+		bts, _ := ioutil.ReadAll(res.Body)
+		return base64.StdEncoding.EncodeToString(bts)
+	}
 }
