@@ -2,6 +2,7 @@ package baidu
 
 import (
 	"encoding/base64"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"testing"
@@ -25,4 +26,12 @@ func TestSDK_Body_Separate(t *testing.T) {
 	res, _ := sdk.Body().Separate(&req)
 	img, _ := base64.StdEncoding.DecodeString(res.Foreground)
 	_ = ioutil.WriteFile("./ugc_error_sep.png", img, os.ModePerm)
+}
+
+func TestSDK_Body_Recognise(t *testing.T) {
+	bts, _ := ioutil.ReadFile("./ugc_error.jpg")
+	bs64 := base64.StdEncoding.EncodeToString(bts)
+	req := body.RecogniseRequest{Image: bs64}
+	res, err := sdk.Body().Recognise(&req)
+	fmt.Println(res, err)
 }
