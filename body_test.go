@@ -29,9 +29,7 @@ func TestSDK_Body_Separate(t *testing.T) {
 }
 
 func TestSDK_Body_Recognise(t *testing.T) {
-	bts, _ := ioutil.ReadFile("./ugc_error.jpg")
-	bs64 := base64.StdEncoding.EncodeToString(bts)
-	req := body.RecogniseRequest{Image: bs64}
-	res, err := sdk.Body().Recognise(&req)
-	fmt.Println(res, err)
+	req := body.NewAdvancedGeneralRecognise("http://imgsrc.baidu.com/baike/pic/item/91ef76c6a7efce1b27893518a451f3deb58f6546.jpg", 3)
+	res, err := sdk.Body().Recognise(req)
+	fmt.Println(fmt.Sprintf("%+v", res), err)
 }

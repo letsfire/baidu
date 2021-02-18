@@ -41,10 +41,13 @@ func (bs BoolString) MarshalJSON() ([]byte, error) {
 	return json.Marshal("false")
 }
 
-func ImageBase64(image string) string {
-	isUrl := strings.HasPrefix(image, "http://") ||
+func IsURL(image string) bool {
+	return strings.HasPrefix(image, "http://") ||
 		strings.HasPrefix(image, "https://")
-	if isUrl == false {
+}
+
+func ImageBase64(image string) string {
+	if !IsURL(image) {
 		return image
 	}
 	if res, err := http.Get(image); err != nil {
