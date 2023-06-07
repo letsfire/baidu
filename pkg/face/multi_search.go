@@ -1,6 +1,5 @@
 package face
 
-// MultiSearchRequest
 type MultiSearchRequest struct {
 	Image           string  `json:"image"`
 	ImageType       string  `json:"image_type"`
@@ -12,7 +11,6 @@ type MultiSearchRequest struct {
 	MaxUserNum      int     `json:"max_user_num,omitempty"`
 }
 
-// MultiSearchResponse
 type MultiSearchResponse struct {
 	BaseResponse
 	Result struct {

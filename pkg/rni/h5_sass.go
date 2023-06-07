@@ -1,11 +1,9 @@
 package rni
 
-// H5SASSTokenRequest
 type H5SASSTokenRequest struct {
 	PlanId string `json:"plan_id"`
 }
 
-// H5SASSTokenResponse
 type H5SASSTokenResponse struct {
 	Success bool `json:"success"`
 	Result  struct {
@@ -13,12 +11,10 @@ type H5SASSTokenResponse struct {
 	} `json:"result"`
 }
 
-// H5SASSResultRequest
 type H5SASSResultRequest struct {
 	VerifyToken string `json:"verify_token"`
 }
 
-// H5SASSResultResponse
 type H5SASSResultResponse struct {
 	Success bool `json:"success"`
 	Result  struct {

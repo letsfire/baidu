@@ -18,7 +18,6 @@ type SearchResponse struct {
 	} `json:"result"`
 }
 
-// MatchUser
 type MatchUser struct {
 	GroupId  string  `json:"group_id"`
 	UserId   string  `json:"user_id"`

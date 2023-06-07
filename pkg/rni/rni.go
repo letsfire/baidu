@@ -16,7 +16,6 @@ const (
 	h5SASSResultURL   = "https://aip.baidubce.com/rpc/2.0/brain/solution/faceprint/result/detail"
 )
 
-// SDK
 type SDK struct {
 	token string
 	error error

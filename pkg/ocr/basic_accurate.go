@@ -6,7 +6,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// BasicAccurateRequest
 type BasicAccurateRequest struct {
 	Image           string         `json:"image,omitempty"`
 	LanguageType    string         `json:"language_type,omitempty"`
@@ -22,7 +21,6 @@ func (req *BasicAccurateRequest) ToMap() map[string]string {
 	return smp
 }
 
-// BasicAccurateResponse
 type BasicAccurateResponse struct {
 	BaseResponse
 	Direction   int `json:"direction"`

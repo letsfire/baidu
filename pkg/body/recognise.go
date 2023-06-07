@@ -4,7 +4,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// RecogniseRequest
 type RecogniseRequest struct {
 	Image     string                            `json:"image,omitempty"`
 	ImgUrl    string                            `json:"imgUrl,omitempty"`
@@ -54,7 +53,6 @@ func NewAdvancedGeneralRecognise(image string, baikeNum int) *RecogniseRequest {
 	return req.setImage(image)
 }
 
-// RecogniseResponse
 type RecogniseResponse struct {
 	pkg.BaseResponse
 	Result struct {
@@ -64,14 +62,12 @@ type RecogniseResponse struct {
 	} `json:"result"`
 }
 
-// BaikeInfo
 type BaikeInfo struct {
 	BaikeUrl    string `json:"baike_url"`
 	ImageUrl    string `json:"image_url"`
 	Description string `json:"description"`
 }
 
-// PlantResponse
 type PlantResponse struct {
 	pkg.BaseResponse
 	Result []struct {
@@ -81,7 +77,6 @@ type PlantResponse struct {
 	} `json:"result"`
 }
 
-// AnimalResponse
 type AnimalResponse struct {
 	pkg.BaseResponse
 	Result []struct {
@@ -91,7 +86,6 @@ type AnimalResponse struct {
 	} `json:"result"`
 }
 
-// AdvancedGeneralResponse
 type AdvancedGeneralResponse struct {
 	pkg.BaseResponse
 	ResultNum int `json:"result_num"`

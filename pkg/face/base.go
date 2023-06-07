@@ -4,7 +4,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// BaseResponse
 type BaseResponse struct{ pkg.BaseResponse }
 
 // NoFace 图片没有人脸

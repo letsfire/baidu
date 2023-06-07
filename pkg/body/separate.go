@@ -4,7 +4,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// SeparateRequest
 type SeparateRequest struct {
 	Image string `json:"image"`
 	Type  string `json:"type"`
@@ -20,7 +19,6 @@ func (r *SeparateRequest) ToMap() map[string]string {
 	}
 }
 
-// SeparateResponse
 type SeparateResponse struct {
 	pkg.BaseResponse
 	Labelmap   string `json:"labelmap"`

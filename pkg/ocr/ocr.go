@@ -6,7 +6,6 @@ import (
 
 var client = resty.New()
 
-// SDK
 type SDK struct {
 	token string
 	error error

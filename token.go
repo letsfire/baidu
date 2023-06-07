@@ -5,13 +5,6 @@ import (
 	"time"
 )
 
-// RenewLocker TOKEN刷新锁
-// 在刷新TOKEN之前申请许可, 通过后方可刷新TOKEN
-type RenewLocker interface {
-	Acquire(key string, ttl time.Duration) (bool, error)
-	Release(key string) error
-}
-
 // TokenStorage TOKEN持久化
 type TokenStorage interface {
 	Store(key, value string, ttl time.Duration) error

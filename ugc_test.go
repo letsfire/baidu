@@ -2,7 +2,7 @@ package baidu
 
 import (
 	"encoding/base64"
-	"io/ioutil"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -11,7 +11,7 @@ import (
 )
 
 func TestSDK_Ugc_Image(t *testing.T) {
-	bts, _ := ioutil.ReadFile("./ugc_error2.jpg")
+	bts, _ := os.ReadFile("./ugc_error2.jpg")
 	bs64 := base64.StdEncoding.EncodeToString(bts)
 	res, err := sdk.Ugc().Image(&ugc.ImageRequest{Image: bs64})
 	assert.Nil(t, err)

@@ -6,7 +6,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// BasicGeneralRequest
 type BasicGeneralRequest struct {
 	Image           string         `json:"image,omitempty"`
 	Url             string         `json:"url,omitempty"`
@@ -24,7 +23,6 @@ func (req *BasicGeneralRequest) ToMap() map[string]string {
 	return smp
 }
 
-// BasicGeneralResponse
 type BasicGeneralResponse struct {
 	BaseResponse
 	Direction   int `json:"direction"`

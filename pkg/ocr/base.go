@@ -4,7 +4,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// BaseResponse
 type BaseResponse struct{ pkg.BaseResponse }
 
 // UrlError 图片下载失败

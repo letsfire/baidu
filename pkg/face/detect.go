@@ -17,7 +17,6 @@ type DetectResponse struct {
 	} `json:"result"`
 }
 
-// DetectFace
 type DetectFace struct {
 	FaceToken string `json:"face_token"`
 	Location  struct {

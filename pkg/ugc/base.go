@@ -6,7 +6,6 @@ import (
 	"github.com/letsfire/baidu/pkg"
 )
 
-// BaseResponse
 type BaseResponse struct{ pkg.BaseResponse }
 
 type Conclusion struct {
