@@ -8,6 +8,7 @@ type SearchRequest struct {
 	LivenessControl string `json:"liveness_control,omitempty"`
 	UserId          string `json:"user_id,omitempty"`
 	MaxUserNum      int    `json:"max_user_num,omitempty"`
+	MatchThreshold  int    `json:"match_threshold,omitempty"`
 }
 
 type SearchResponse struct {
